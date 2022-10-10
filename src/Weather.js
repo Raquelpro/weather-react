@@ -67,7 +67,7 @@ export default function Weather() {
             <div className="weather-forcast"></div>
             <div className="row"></div>
             <small>
-              <a href="https://github.com/Raquelpro/My-Weather-App">
+              <a href="https://github.com/Raquelpro/My-Weather-App" target="_blank" rel="noreferrer">
                 Open-source code
               </a>
               , by Raquel Provvidente
