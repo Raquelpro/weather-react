@@ -1,6 +1,7 @@
 import React, { useState} from "react";
-import axios from "axios";
 import FormatedDate from "./FormatedDate";
+import WeatherInfo from "./WeatherInfo";
+import axios from "axios";
 import "./App.css";
 
 export default function Weather(props) {
@@ -42,6 +43,7 @@ if (weatherData.ready) {
               </div>
             </div>
           </form>
+          <WeatherInfo />
           <div className="container text-center">
             <div className="col-md-6 offset-md-3">
               <h1>{weatherData.city}</h1>
@@ -67,7 +69,6 @@ if (weatherData.ready) {
                 </span>
               </div>
             </div>
-
             <div className="col-md-3 offset-md-3">
               <ul>
                 <li>Precipitation: 0%</li>
@@ -81,18 +82,9 @@ if (weatherData.ready) {
             </div>
           </div>
         </div>
-        <br />
-        <div className="weather-forcast"></div>
-        <div className="row"></div>
-        <small>
-          <a href="https://github.com/Raquelpro/weather-react" target="_blank" rel="noreferrer">
-            Open-source code
-          </a>
-          , by Raquel Provvidente
-        </small>
-      </div>
-    </div>
+  </div>
   </div>  
+  </div>
 );
 } else {
   const apiKey = "351f91287b21e3eaef97ef1db4d5e2ba";
