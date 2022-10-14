@@ -1,5 +1,6 @@
 import React, { useState} from "react";
 import axios from "axios";
+import FormatedDate from "./FormatedDate";
 import "./App.css";
 
 export default function Weather(props) {
@@ -9,11 +10,11 @@ function handleResponse(response) {
     ready: true,
     temperature: response.data.main.temp,
     humidity: response.data.main.humidity,
-    date: "Wednesday 07:00",
+    date: new Date(response.data.dt * 1000),
     description: response.data.weather[0].description,
     iconUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
     wind: response.data.wind.speed,
-    city: response.data.name
+    city: response.data.name,
   });
 }
 
@@ -46,7 +47,7 @@ if (weatherData.ready) {
               <h1>{weatherData.city}</h1>
               <ul>
                 <li>
-                  Last updated at: <span>{weatherData.date}</span>
+                  Last updated at: <FormatedDate date={weatherData.date} />
                 </li>
                 <li className="text-capitalize">{weatherData.description}</li>
               </ul>
@@ -94,7 +95,7 @@ if (weatherData.ready) {
   </div>  
 );
 } else {
-  const apiKey = "3ed26e20a2e7286d23126eb51e31f310";
+  const apiKey = "351f91287b21e3eaef97ef1db4d5e2ba";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(handleResponse);  
 
