@@ -22,7 +22,6 @@ export default function WeatherInfo(props) {
               <div className="float-left">
                 <WeatherIcon code={props.data.icon} />
                 </div>
-                <strong></strong>
                 <span className="units">{Math.round(props.data.temperature)}
                   <a href="/">°C</a> |<a href="/">°F</a>
                 </span>
