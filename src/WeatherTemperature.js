@@ -17,7 +17,7 @@ function showCelsius(event) {
     return (
         <div className="WeatherTemperature">
         <span className="units">{Math.round(props.celsius)}
-        <a href="/">°C</a> | {""}<a href="/" onclick={showFarenheit}>°F</a>
+        <a href="/">°C</a> | {""}<a href="/" onClick={showFarenheit}>°F</a>
       </span> 
       </div>
     );
@@ -26,7 +26,7 @@ function showCelsius(event) {
         return (
             <div className="WeatherTemperature">
             <span className="units">{Math.round(fahrenheit)}
-            <a href="/" onclick={showCelsius}>°C</a> {""}|<a href="/" >°F</a>
+            <a href="/" onClick={showCelsius}>°C</a> {""}|<a href="/" >°F</a>
           </span> 
           </div>   
         )
