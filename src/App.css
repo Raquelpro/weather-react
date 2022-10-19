@@ -68,3 +68,7 @@ small {
   color: #61dafb;
 }
 
+#text {
+  font-size: 30px;
+  top: 100px;
+}
